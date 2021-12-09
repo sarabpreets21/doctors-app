@@ -131,7 +131,7 @@ export default function Makeappointment(){
             </Divi>
 
             <Divi>
-                <input value={msg} onChange={handleMsg} placeholder="Enter Message" style={{width:"100%",paddingLeft:'10px',height:"140px",border:"1px solid lightgray"}}></input>
+                <input value={msg} onChange={handleMsg} type="text" placeholder="Enter Message" style={{width:"100%",paddingLeft:'10px',height:"140px",border:"1px solid lightgray"}}></input>
                
             </Divi>
 

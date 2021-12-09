@@ -141,7 +141,7 @@ export default function Signup(){
             </Divi>
 
             <Divi>
-                <input value={password} onChange={handlePass} placeholder="Password"  style={{width:"45%",height:"40px",border:"1px solid lightgray",paddingLeft:'10px'}}></input>
+                <input  type="password" value={password} onChange={handlePass} placeholder="Password"  style={{width:"45%",height:"40px",border:"1px solid lightgray",paddingLeft:'10px'}}></input>
                 <input onChange={handleAge} value={age} placeholder="age" style={{paddingLeft:'10px',width:"45%",height:"40px",border:"1px solid lightgray"}}></input>
             </Divi>
 
