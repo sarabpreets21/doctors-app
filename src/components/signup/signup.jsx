@@ -53,7 +53,8 @@ export default function Signup(){
                     gender:gender,
                     appointments:[],
                     Patient:true,
-                    imageUrl:downloadUrl
+                    imageUrl:downloadUrl,
+                    prescriptions:[]
 
 
                     

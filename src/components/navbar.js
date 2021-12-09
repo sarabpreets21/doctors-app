@@ -2,12 +2,22 @@ import styled from "styled-components";
 import lgo from "../images/Untitled.png"
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router";
 
 export default function Navbar(){
 
 
+    
     const {currentUser} = useAuth()
     const {logout } = useAuth()
+    const navigate = useNavigate()
+
+
+    const handleLogOut =()=>{
+        logout()
+        navigate("/")
+    }
+
     return(
         <Navbarr>
              <Link to="/" style={{textDecoration:"none",color:"lightgreen"}}><img src={lgo} /></Link>
@@ -15,7 +25,7 @@ export default function Navbar(){
         <Sdiv>
            <Link to="/" style={{textDecoration:"none",color:"lightgreen"}}> <Title>Home</Title></Link>
            <Link to="/doctors" style={{textDecoration:"none",color:"lightgreen"}}> <Title>Doctors</Title></Link>
-           {currentUser?<div style={{padding:"0",margin:"0",height:"100%",background:"transparent",display:"flex",alignItems:"center"}}><Link to="/appointments" style={{textDecoration:"none",color:"lightgreen",marginRight:"15px"}}><Button>Appointments</Button></Link> <Button onClick={logout}>Logout</Button></div>
+           {currentUser?<div style={{padding:"0",margin:"0",height:"100%",background:"transparent",display:"flex",alignItems:"center"}}><Link to="/appointments" style={{textDecoration:"none",color:"lightgreen",marginRight:"15px"}}><Button>Appointments</Button></Link> <Button onClick={handleLogOut}>Logout</Button></div>
           
            :<Link to="/login" style={{textDecoration:"none",color:"lightgreen"}}><Button>Login/Signup</Button></Link>}
         </Sdiv>
@@ -25,8 +35,8 @@ export default function Navbar(){
 const Button = styled.button`
     width: 150px;
     border-radius: 15px;
-    background: lightgreen;
-    color:black;
+    background: #00D9AD;
+    color:white;
     height: 40px;
     border:none;
     font-size: 18px;
@@ -34,7 +44,7 @@ const Button = styled.button`
 
 `
 const Title = styled.span`
-    color: lightgreen;
+    color: #00D9AD;
     margin-right: 25px;
     height: 100%;
     padding: 0;

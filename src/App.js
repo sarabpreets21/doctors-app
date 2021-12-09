@@ -10,6 +10,7 @@ import Makeappointment from './components/makeAppointment';
 import Login from './components/login';
 import Navbar from './components/navbar';
 import Appointments from './components/appointments';
+import Prescriptions from './components/prescriptions';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/appointment"  element={<Makeappointment/>}/>
           <Route exact path="/login"  element={<Login/>}/>
           <Route exact path="appointments"  element={<Appointments/>}/>
+          <Route exact path="prescriptions"  element={<Prescriptions/>}/>
         </Switch>
       </BrowserRouter>
       </AuthProvider>

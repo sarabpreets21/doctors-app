@@ -36,7 +36,7 @@ export default function Makeappointment(){
                     obj.number = no
                     obj.doctor = namee.split(" ")[1]
                     obj.message = msg
-
+                    obj.uid= currentUser.uid
                     console.log(obj);
                     appointmentsD.push(obj)
                     appointmentsU.push(obj)
@@ -147,7 +147,7 @@ export default function Makeappointment(){
 const Button = styled.button`
     width: 150px;
     border-radius: 15px;
-    background: blue;
+    background: #00D9AD;
     color:white;
     height: 50px;
     border:none;
@@ -164,7 +164,7 @@ const Divi = styled.div`
     margin-bottom: 25px;
 `
 const Container = styled.div`
-width: 100%;
+width: 95%;
 background: white;
 min-height: 40vh;
 display: flex;

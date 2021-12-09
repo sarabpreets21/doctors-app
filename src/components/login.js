@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthContext"
 import uuid from "react-uuid"
 import { useNavigate } from 'react-router-dom';
 import styled from "styled-components"
-
+import { Link } from "react-router-dom"
 export default function Login(){
 
 
@@ -85,6 +85,10 @@ export default function Login(){
 
                <Divi>
                 <input type="submit" onClick={()=>{handleSubmit()}} value="Submit"/>
+                </Divi>
+
+                <Divi>
+                    <Link to="/signup" style={{textDecoration:"none",color:"black",position:'relative',marginLeft:"auto",marginRight:"auto"}}><span style={{position:'relative',marginLeft:"auto",marginRight:"auto"}}>New User?</span></Link>
                 </Divi>
                 </Container>
     )
