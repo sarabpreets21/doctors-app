@@ -60,6 +60,7 @@ export default function Appointments(){
     
     return(
         <Container>
+            
             {!state?<Link style={{textDecoration:"none",color:"white"}} to="/prescriptions" ><Pres>View Prescriptions</Pres></Link>:""}
             {data.length==0?<h3>No Appointments</h3>:data.map(function(data){
                 return(
@@ -67,6 +68,7 @@ export default function Appointments(){
                         {state?<Button onClick={handlePres} id={data.uid}>Add Prescription</Button>:""}
                 <span>Doctor : {data.doctor}</span>
                 <span>Patient: {data.name}</span>
+                <span>Time: {data.time}</span>
                 <span>Patient Email: {data.email}</span>
                 <span>Patient Number: {data.number}</span>
                 <span style={{maxWidth:"100%",}}>Patient Problem: {data.message}</span>
@@ -80,6 +82,19 @@ export default function Appointments(){
     )
 
 }
+const Modal = styled.div`
+    width:30vw;
+    min-height: 15vh;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+`
 const Pres = styled.button`
 width: 150px;
     border-radius: 15px;

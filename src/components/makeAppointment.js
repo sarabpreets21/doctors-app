@@ -21,6 +21,7 @@ export default function Makeappointment(){
             console.log(user.exists);
             if(user.exists!= false ){
                 let namee = document.getElementById("choice").value;
+                let time = document.getElementById("time").value;
                 
                 if(user.data().Patient){
                     let doctor = await database.Doctors.doc(namee.split(" ")[0]).get();
@@ -37,6 +38,7 @@ export default function Makeappointment(){
                     obj.doctor = namee.split(" ")[1]
                     obj.message = msg
                     obj.uid= currentUser.uid
+                    obj.time = time.split(" ")[0]+"-"+time.split(" ")[1]+"pm"
                     console.log(obj);
                     appointmentsD.push(obj)
                     appointmentsU.push(obj)
@@ -120,6 +122,25 @@ export default function Makeappointment(){
                         <option value="e2M0PaaKhGfXFnHKZbtWZvaVXCs1 Dr.Shanon">Dr.Shanon</option>
                         <option value="uyBtLBzS3zb1Nrsu0WpnZxfXNTi1 Dr.Franklin">Dr.Franklin</option>
                     
+                    
+                
+                </select>
+            </Divi>
+
+            <Divi>
+                    <select id="time">
+                        {/* {Docs.map(function(name){
+                            console.log(name);
+                            return(
+                                <option value="Dr.Ravi">Ravi</option>
+                            )
+                        })} */}
+                        <option value="12 1">12-1pm</option>
+                        <option value="1 2">1-2pm</option>
+                        <option value="2 3">2-3pm</option>
+                        <option value="3 4">3-4pm</option>
+                        <option value="4 5">4-5pm</option>
+                        <option value="5 6">5-6pm</option>
                     
                 
                 </select>
